@@ -1,2 +1,7 @@
 .DS_STORE
 *.log
+*.swp
+.sass-cache
+/bower_components
+/node_modules
+/build
