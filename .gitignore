@@ -4,4 +4,4 @@
 .sass-cache
 /bower_components
 /node_modules
-/build
+app/build/js/production.min.js
