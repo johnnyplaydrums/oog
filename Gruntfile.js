@@ -20,9 +20,13 @@ module.exports = function(grunt) {
 			}	
 		},
 
+		jshint: {
+			files: ['Gruntfile.js', '<%= project.js %>/app.js'],
+		},
+
 		concat: {
 			js: {
-				src: ['<%= project.app %>/bower_components/jquery/dist/jquery.js', '<%= project.app %>/bower_components/angular/angular.js'],
+				src: ['<%= project.app %>/bower_components/jquery/dist/jquery.js', '<%= project.app %>/bower_components/angular/angular.js', '<%= project.js %>/app.js'],
 				dest: '<%= project.js %>/production.js' 
 			}
 		},
@@ -32,6 +36,25 @@ module.exports = function(grunt) {
 				files: {
 					'<%= project.build %>/js/production.min.js' : ['<%= concat.js.dest %>']
 				}
+			}
+		},
+
+		watch: {
+			sass: {
+				files: '<%= project.css %>/*.scss',
+				tasks: ['sass']
+			},
+			jshint: {
+				files: '<%= project.js %>/app.js',
+				tasks: ['jshint']
+			},
+			concat: {
+				files: '<%= project.js %>/app.js',
+				tasks: ['concat'],
+			},
+			uglify: {
+				files: '<%= concat.js.dest %>',
+				tasks: ['uglify']
 			}
 		}
 	
@@ -44,5 +67,5 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-watch');
 
 
-	grunt.registerTask('default', ['sass', 'concat', 'uglify']);
-}
+	grunt.registerTask('default', ['sass', 'jshint', 'concat', 'uglify', 'watch']);
+};
