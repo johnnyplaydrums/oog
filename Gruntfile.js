@@ -39,6 +39,20 @@ module.exports = function(grunt) {
 			}
 		},
 
+		imagemin: {
+			build: {
+				options: {
+					optimizationLevel: 5
+				},
+				files: [{
+					expand: true,
+					cwd: '<%= project.src %>/images/',
+					src: ['*.{png,jpg,gif}'],
+					dest: '<%= project.build %>/images/'
+				}]	
+			}		
+		},
+
 		watch: {
 			sass: {
 				files: '<%= project.css %>/*.scss',
@@ -65,7 +79,8 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-contrib-imagemin');
 
 
-	grunt.registerTask('default', ['sass', 'jshint', 'concat', 'uglify', 'watch']);
+	grunt.registerTask('default', ['sass', 'jshint', 'concat', 'uglify', 'imagemin', 'watch']);
 };
