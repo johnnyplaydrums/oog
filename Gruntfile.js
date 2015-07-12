@@ -24,6 +24,13 @@ module.exports = function(grunt) {
 			files: ['Gruntfile.js', '<%= project.js %>/app.js'],
 		},
 
+		copy: {
+			build: {
+				src: 'app/src/index.html',
+				dest: 'app/build/index.html'
+			}
+		},
+
 		concat: {
 			js: {
 				src: ['<%= project.app %>/bower_components/jquery/dist/jquery.js', '<%= project.app %>/bower_components/angular/angular.js', '<%= project.js %>/app.js'],
@@ -80,7 +87,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-imagemin');
+	grunt.loadNpmTasks('grunt-contrib-copy');
 
-
-	grunt.registerTask('default', ['sass', 'jshint', 'concat', 'uglify', 'imagemin', 'watch']);
+	grunt.registerTask('default', ['sass', 'jshint', 'concat', 'uglify', 'imagemin', 'copy', 'watch']);
 };
