@@ -76,6 +76,10 @@ module.exports = function(grunt) {
 			uglify: {
 				files: '<%= concat.js.dest %>',
 				tasks: ['uglify']
+			},
+			copy: {
+				files: '<%= project.src %>/index.html',
+				tasks: ['copy']
 			}
 		}
 	

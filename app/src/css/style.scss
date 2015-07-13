@@ -1,1 +1,8 @@
 @import 'app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap';
+
+$img-strawberry: '../images/strawberry.jpg';
+
+body {
+	background-image: url($img-strawberry);
+	background-size: cover;
+}
