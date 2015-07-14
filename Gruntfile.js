@@ -9,6 +9,7 @@ module.exports = function(grunt) {
 			src: '<%= project.app %>/src',
 			js: '<%= project.src %>/js',
 			css: '<%= project.src %>/css',
+			bootstrap: '<%= project.app %>/bower_components/bootstrap-sass-official',
 			build : '<%= project.app %>/build'
 		},
 
@@ -24,6 +25,16 @@ module.exports = function(grunt) {
 			files: ['Gruntfile.js', '<%= project.js %>/app.js'],
 		},
 
+		bootlint: {
+			options: {
+				relaxerror: ['W005'],
+				showallerrors: false,
+				stoponerror: false,
+				stoponwarning: false
+			},
+			files: ['app/src/index.html']
+		},
+
 		copy: {
 			build: {
 				src: 'app/src/index.html',
@@ -33,7 +44,7 @@ module.exports = function(grunt) {
 
 		concat: {
 			js: {
-				src: ['<%= project.app %>/bower_components/jquery/dist/jquery.js', '<%= project.app %>/bower_components/angular/angular.js', '<%= project.js %>/app.js'],
+				src: ['<%= project.app %>/bower_components/jquery/dist/jquery.js', '<%= project.app %>/bower_components/angular/angular.js', '<%= project.bootstrap %>/assets/javascripts/bootstrap.js', '<%= project.js %>/app.js'],
 				dest: '<%= project.js %>/production.js' 
 			}
 		},
@@ -69,6 +80,10 @@ module.exports = function(grunt) {
 				files: '<%= project.js %>/app.js',
 				tasks: ['jshint']
 			},
+			bootlint: {
+				files: '<%= project.src %>/index.html',	
+				tasks: ['bootlint']
+			},
 			concat: {
 				files: '<%= project.js %>/app.js',
 				tasks: ['concat'],
@@ -92,6 +107,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-imagemin');
 	grunt.loadNpmTasks('grunt-contrib-copy');
+	grunt.loadNpmTasks('grunt-bootlint');
 
-	grunt.registerTask('default', ['sass', 'jshint', 'concat', 'uglify', 'imagemin', 'copy', 'watch']);
+	grunt.registerTask('default', ['sass', 'jshint', 'bootlint', 'concat', 'uglify', 'imagemin', 'copy', 'watch']);
 };

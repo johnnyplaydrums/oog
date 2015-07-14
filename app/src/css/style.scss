@@ -4,5 +4,5 @@ $img-strawberry: '../images/strawberry.jpg';
 
 body {
 	background-image: url($img-strawberry);
-	background-size: cover;
+	background-repeat: no-repeat;
 }
