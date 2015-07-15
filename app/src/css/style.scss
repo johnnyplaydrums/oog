@@ -1,8 +1,36 @@
 @import 'app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap';
 
 $img-strawberry: '../images/strawberry.jpg';
+$img-logo: '../images/logo.png';
 
 body {
-	background-image: url($img-strawberry);
-	background-repeat: no-repeat;
+	background: url($img-strawberry) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+/* Navbar */
+
+.navbar-header {
+	/* Only because we have no other menu items YET */
+	float: none;
+}
+
+.navbar-inverse a, .navbar-inverse .navbar-brand {
+	color: #fff;
+}
+
+.navbar .donate {
+	float: right;
+	background-color: rgb(12, 141, 196);
+	border-radius: 15px;
+	margin: 8px;
+	padding: 6px 10px;
+}
+
+.logo img {
+	width: inherit;
+	max-width: 350px
 }
