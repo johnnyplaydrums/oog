@@ -18,19 +18,32 @@ body {
 	float: none;
 }
 
+.navbar-inverse {
+	background-color: rgb(0, 2, 34);
+	background-color: rgba(0, 0, 0, 0.7);
+}
+
 .navbar-inverse a, .navbar-inverse .navbar-brand {
 	color: #fff;
 }
 
 .navbar .donate {
 	float: right;
-	background-color: rgb(12, 141, 196);
+	background-color: rgb(0, 156, 222);
 	border-radius: 15px;
 	margin: 8px;
 	padding: 6px 10px;
 }
 
+.navbar .donate:hover {
+	background-color: rgb(12, 141, 196);
+	text-decoration: none;
+} 
+
+/* Main Content */
+
 .logo img {
 	width: inherit;
 	max-width: 350px
 }
+
