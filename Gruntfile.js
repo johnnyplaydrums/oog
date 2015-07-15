@@ -36,7 +36,7 @@ module.exports = function(grunt) {
 		},
 
 		copy: {
-			build: {
+			html: {
 				src: 'app/src/index.html',
 				dest: 'app/build/index.html'
 			}

@@ -1,5 +1,11 @@
 @import 'app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap';
 
+@font-face {
+    font-family: capture;
+    src: url(../fonts/capture.ttf);
+}
+
+
 $img-strawberry: '../images/strawberry.jpg';
 $img-logo: '../images/logo.png';
 
@@ -47,3 +53,35 @@ body {
 	max-width: 350px
 }
 
+/* Footer */
+
+.navbar-fixed-bottom p {
+	font-family: capture;
+	font-size: 24px;
+	color: #DE0914;
+}
+
+.navbar-fixed-bottom a:hover {
+	color: #DE0914;
+}
+
+.navbar-fixed-bottom a:focus {
+	outline: none;
+	text-decoration: none;
+}
+
+@media (min-width: $screen-sm-min) {
+
+	.navbar-fixed-bottom p {
+		font-size: 30px;
+	}
+
+}
+
+@media (min-width: $screen-md-min) {
+
+	.navbar-fixed-bottom p {
+		font-size: 40px;
+	}
+
+}
