@@ -1,4 +1,5 @@
 @import 'app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap';
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
 
 @font-face {
     font-family: capture;
@@ -10,6 +11,7 @@ $img-strawberry: '../images/strawberry.jpg';
 $img-logo: '../images/logo.png';
 
 body {
+	font-family: 'Open Sans', sans-serif;
 }
 
 /* Navbar */
@@ -45,9 +47,8 @@ body {
 /* Main Content */
 
 .logo {
-	height: 100%;
-	width: 100%;
-	padding: 55px 0 0;
+	height: 100vh;
+	padding: 50px 0;
 	background: url($img-strawberry) no-repeat center center fixed; 
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -68,10 +69,18 @@ body {
 	margin: 50px auto;
 }
 
+.about .author {
+	padding: 0 40px 0;
+}
+
+.about-text {
+	padding: 20px 0;
+}
+
 /* Footer */
 
 .handle {
-	padding-top: 78%;
+	padding: 48vh 0 0;
 }
 
 .handle p {
@@ -91,7 +100,7 @@ body {
 
 @media (min-width: $screen-sm-min) {
 
-	.navbar-fixed-bottom p {
+	.handle p {
 		font-size: 30px;
 	}
 
@@ -99,7 +108,7 @@ body {
 
 @media (min-width: $screen-md-min) {
 
-	.navbar-fixed-bottom p {
+	.handle p {
 		font-size: 40px;
 	}
 
