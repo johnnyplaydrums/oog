@@ -93,6 +93,7 @@ body {
 	font-family: capture;
 	font-size: 24px;
 	color: #DE0914;
+	margin: 0;
 }
 
 .handle a:hover {
@@ -102,6 +103,12 @@ body {
 .handle a:focus {
 	outline: none;
 	text-decoration: none;
+}
+
+.handle i {
+
+	color: #DE0914;
+
 }
 
 @media (min-width: $screen-sm-min) {
