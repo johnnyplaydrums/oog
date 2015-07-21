@@ -77,10 +77,11 @@ body {
 	padding: 20px 0;
 }
 
-/* Footer */
-
 .handle {
-	padding: 48vh 0 0;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
 }
 
 .handle p {
